@@ -281,11 +281,44 @@ type Table struct {
 	cellSpacingV   float64     // vertical spacing between cells (CSS border-spacing)
 	direction      Direction   // text direction; RTL reverses column order
 	keepHeaderRows int         // min body rows kept with the header on a fragment (orphan control; <1 = 1)
+
+	// Carried/brought-forward (dynamic running-balance rows across a split).
+	// carriedRow is appended at the bottom of each non-final fragment; broughtRow
+	// is prepended atop each continuation (after the header rows). On each split
+	// both are cloned and their cell at carryValueIdx is filled with the text of
+	// the boundary row's cell at carrySourceCol (the running-balance column).
+	// nil carriedRow disables the feature.
+	carriedRow     *Row
+	broughtRow     *Row
+	carryValueIdx  int // index into carried/brought row's cells of the value cell
+	carrySourceCol int // grid column whose text is carried (the running balance)
 }
 
 // NewTable creates a new empty table.
 func NewTable() *Table {
 	return &Table{}
+}
+
+// NewRow creates a detached row (not attached to any table) — for building
+// carried/brought-forward template rows that SetCarriedRow/SetBroughtRow accept.
+func NewRow() *Row {
+	return &Row{}
+}
+
+// SetCarriedRow registers the carried-forward template (see SetCarryForward).
+func (t *Table) SetCarriedRow(row *Row, valueIdx, sourceCol int) *Table {
+	t.carriedRow = row
+	t.carryValueIdx = valueIdx
+	t.carrySourceCol = sourceCol
+	return t
+}
+
+// SetBroughtRow registers the brought-forward template (see SetCarryForward).
+func (t *Table) SetBroughtRow(row *Row, valueIdx, sourceCol int) *Table {
+	t.broughtRow = row
+	t.carryValueIdx = valueIdx
+	t.carrySourceCol = sourceCol
+	return t
 }
 
 // SetKeepHeaderRows sets the orphan-control threshold: the minimum number of
@@ -297,6 +330,87 @@ func NewTable() *Table {
 func (t *Table) SetKeepHeaderRows(n int) *Table {
 	t.keepHeaderRows = n
 	return t
+}
+
+// SetCarryForward enables dynamic carried-/brought-forward rows on page splits.
+// carried is drawn at the bottom of each non-final fragment and brought at the
+// top of each continuation (after the repeated header). At each split both are
+// cloned and the cell at valueCellIdx is filled with the text of the boundary
+// row's cell at sourceCol (the running-balance column). Pass carried == nil to
+// disable. The two templates should share the same cell layout (label cell(s)
+// + a value cell at valueCellIdx).
+func (t *Table) SetCarryForward(carried, brought *Row, valueCellIdx, sourceCol int) *Table {
+	t.carriedRow = carried
+	t.broughtRow = brought
+	t.carryValueIdx = valueCellIdx
+	t.carrySourceCol = sourceCol
+	return t
+}
+
+// buildGridRow builds a single flat grid row (no rowspan-from-above state) — used
+// to measure and draw a synthesized carried/brought-forward row.
+func (t *Table) buildGridRow(row *Row, colWidths []float64) gridRow {
+	nCols := len(colWidths)
+	gr := gridRow{isHeader: row.isHeader, isFooter: row.isFooter}
+
+	col := 0
+	for cellIdx := 0; cellIdx < len(row.cells) && col < nCols; cellIdx++ {
+		cell := row.cells[cellIdx]
+
+		colspan := min(cell.colspan, nCols-col)
+		if colspan < 1 {
+			colspan = 1
+		}
+
+		spanW := 0.0
+		for c := col; c < col+colspan; c++ {
+			spanW += colWidths[c]
+		}
+
+		gr.cells = append(gr.cells, gridCell{cell: cell, col: col, spanWidth: spanW})
+		col += colspan
+	}
+
+	maxH := 0.0
+	for i := range gr.cells {
+		if h := t.cellContentHeight(&gr.cells[i]); h > maxH {
+			maxH = h
+		}
+	}
+
+	gr.height = maxH
+
+	return gr
+}
+
+// gridRowCellText returns the text of the grid row's cell starting at column
+// col (the running-balance column), or "" if none.
+func gridRowCellText(gr gridRow, col int) string {
+	for _, gc := range gr.cells {
+		if gc.col == col {
+			return gc.cell.text
+		}
+	}
+
+	return ""
+}
+
+// cloneRowWithValue shallow-copies a template row, overriding the value cell's
+// text (and clearing any Element content so the text renders).
+func cloneRowWithValue(row *Row, valueIdx int, value string) *Row {
+	nr := &Row{isHeader: row.isHeader, isFooter: row.isFooter}
+
+	for i, c := range row.cells {
+		cc := *c
+		if i == valueIdx {
+			cc.text = value
+			cc.content = nil
+		}
+
+		nr.cells = append(nr.cells, &cc)
+	}
+
+	return nr
 }
 
 // SetColumnWidths sets explicit column widths in points.
@@ -964,6 +1078,15 @@ func (t *Table) PlanLayout(area LayoutArea) LayoutPlan {
 		}
 	}
 
+	// Carried/brought-forward: when this fragment splits, a carried row is added
+	// at its bottom. Measure it once (a one-line row's height is value-independent)
+	// and reserve room for it in the split decision so it never overflows the box.
+	carryEnabled := t.carriedRow != nil && t.carrySourceCol >= 0 && headerRowCount < bodyEnd
+	carriedReserve := 0.0
+	if carryEnabled {
+		carriedReserve = sv + t.buildGridRow(t.carriedRow, colWidths).height
+	}
+
 	// Build blocks row by row, checking height.
 	var blocks []PlacedBlock
 	curY := 0.0
@@ -978,11 +1101,14 @@ func (t *Table) PlanLayout(area LayoutArea) LayoutPlan {
 		// Add vertical spacing before this row.
 		curY += sv
 
-		// Check if this body row fits (reserve space for footer if splitting).
+		// Check if this body row fits (reserve space for footer + carried row if splitting).
 		needsFooter := footerRowCount > 0 && i > headerRowCount
 		reserveH := 0.0
 		if needsFooter {
 			reserveH = footerHeight
+		}
+		if carryEnabled && i > headerRowCount {
+			reserveH += carriedReserve
 		}
 		if curY+gr.height+reserveH > area.Height && area.Height > 0 && i > headerRowCount {
 			splitIdx = i
@@ -1003,6 +1129,25 @@ func (t *Table) PlanLayout(area LayoutArea) LayoutPlan {
 			},
 		})
 		curY += gr.height
+	}
+
+	// Carried-forward row at the bottom of a non-final fragment, filled with the
+	// running balance of the last placed body row.
+	if carryEnabled && splitIdx < bodyEnd {
+		val := gridRowCellText(grid[splitIdx-1], t.carrySourceCol)
+		cr := t.buildGridRow(cloneRowWithValue(t.carriedRow, t.carryValueIdx, val), colWidths)
+		crGrid := []gridRow{cr}
+		capColW, capMaxW, capTbl := colWidths, area.Width, t
+
+		curY += sv
+		blocks = append(blocks, PlacedBlock{
+			X: 0, Y: curY, Width: area.Width, Height: cr.height,
+			Tag: "TR",
+			Draw: func(ctx DrawContext, absX, absTopY float64) {
+				drawTableRowDirect(ctx, capTbl, crGrid, 0, capColW, capMaxW, absX, absTopY)
+			},
+		})
+		curY += cr.height
 	}
 
 	// Bottom edge spacing after last body row.
@@ -1054,6 +1199,12 @@ func (t *Table) PlanLayout(area LayoutArea) LayoutPlan {
 		if row.isHeader {
 			overflowTable.rows = append(overflowTable.rows, row)
 		}
+	}
+	// Brought-forward row atop the continuation (after the header rows), filled
+	// with the same running balance as the carried row on the page just split.
+	if carryEnabled && t.broughtRow != nil {
+		bf := cloneRowWithValue(t.broughtRow, t.carryValueIdx, gridRowCellText(grid[splitIdx-1], t.carrySourceCol))
+		overflowTable.rows = append(overflowTable.rows, bf)
 	}
 	// Add remaining data rows (skip headers/footers + already-rendered rows).
 	dataRowIdx := 0

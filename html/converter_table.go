@@ -301,17 +301,29 @@ func (c *converter) convertTableRow(n *html.Node, tbl *layout.Table, parentStyle
 
 // convertTableRowKind processes a single <tr>. kind is "header", "footer", or "body".
 func (c *converter) convertTableRowKind(n *html.Node, tbl *layout.Table, parentStyle computedStyle, borderWidth float64, kind string) {
+	// A data-carry="carried|brought" row is a template for the dynamic
+	// carried-/brought-forward rows added at page splits — built like any row
+	// but registered on the table instead of placed in the body.
+	carry := getAttr(n, "data-carry")
+	isCarry := carry == "carried" || carry == "brought"
+
 	var row *layout.Row
-	switch kind {
-	case "header":
+	switch {
+	case isCarry:
+		row = layout.NewRow()
+	case kind == "header":
 		row = tbl.AddHeaderRow()
-	case "footer":
+	case kind == "footer":
 		row = tbl.AddFooterRow()
 	default:
 		row = tbl.AddRow()
 	}
 
 	rowStyle := c.computeElementStyle(n, parentStyle)
+
+	// For carry templates: track the value cell (data-carry-value) — its index
+	// in the row + its starting grid column (the running-balance column).
+	carryValueIdx, carrySourceCol, col, cellIdx := -1, -1, 0, 0
 
 	for child := n.FirstChild; child != nil; child = child.NextSibling {
 		if child.Type != html.ElementNode {
@@ -417,9 +429,11 @@ func (c *converter) convertTableRowKind(n *html.Node, tbl *layout.Table, parentS
 			}
 		}
 
+		colspan := 1
 		if cs := getAttr(child, "colspan"); cs != "" {
 			if v := parseInt(cs); v > 1 {
 				cell.SetColspan(v)
+				colspan = v
 			}
 		}
 		if rs := getAttr(child, "rowspan"); rs != "" {
@@ -444,6 +458,27 @@ func (c *converter) convertTableRowKind(n *html.Node, tbl *layout.Table, parentS
 					cell.SetWidthHint(w)
 				}
 			}
+		}
+
+		if isCarry && hasAttr(child, "data-carry-value") {
+			carryValueIdx = cellIdx
+			carrySourceCol = col
+		}
+
+		col += colspan
+		cellIdx++
+	}
+
+	if isCarry {
+		if carryValueIdx < 0 { // no marked value cell — default to the last cell
+			carryValueIdx = cellIdx - 1
+			carrySourceCol = col - 1
+		}
+
+		if carry == "carried" {
+			tbl.SetCarriedRow(row, carryValueIdx, carrySourceCol)
+		} else {
+			tbl.SetBroughtRow(row, carryValueIdx, carrySourceCol)
 		}
 	}
 }
