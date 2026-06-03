@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 // --- Mock GSUBProvider for deterministic CI-safe tests ---

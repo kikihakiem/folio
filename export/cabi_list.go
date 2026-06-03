@@ -12,7 +12,7 @@ import "C"
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // folio_list_new creates a new list element using a standard font and returns its handle.

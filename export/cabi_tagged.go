@@ -13,7 +13,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // ── Alt text for figure elements ───────────────────────────────────

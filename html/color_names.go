@@ -3,7 +3,7 @@
 
 package html
 
-import "github.com/carlos7ags/folio/layout"
+import "github.com/kikihakiem/folio/layout"
 
 // cssColorNames maps CSS named colors to layout.Color values.
 // All 148 CSS color keywords (CSS Color Level 4).

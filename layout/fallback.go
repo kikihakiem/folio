@@ -6,7 +6,7 @@ package layout
 import (
 	"unicode/utf8"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 // NewParagraphFallback creates a paragraph that mixes scripts in a single

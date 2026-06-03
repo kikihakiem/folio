@@ -3,7 +3,7 @@
 
 package layout
 
-import "github.com/carlos7ags/folio/font"
+import "github.com/kikihakiem/folio/font"
 
 // TabAlign specifies how text aligns relative to a tab stop position.
 type TabAlign int

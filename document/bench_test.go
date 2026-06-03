@@ -7,8 +7,8 @@ import (
 	"io"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/layout"
 )
 
 func BenchmarkBlankPage(b *testing.B) {

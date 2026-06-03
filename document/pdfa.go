@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // PdfALevel specifies the PDF/A conformance level.
@@ -311,7 +311,7 @@ func buildXMPMetadata(info Info, level PdfALevel, xmpSchemas []XMPSchema, xmpPro
 	}
 	producer := xmlEscape(info.Producer)
 	if producer == "" {
-		producer = "Folio (github.com/carlos7ags/folio)"
+		producer = "Folio (github.com/kikihakiem/folio)"
 	}
 
 	var b strings.Builder

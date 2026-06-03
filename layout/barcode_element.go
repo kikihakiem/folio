@@ -3,7 +3,7 @@
 
 package layout
 
-import "github.com/carlos7ags/folio/barcode"
+import "github.com/kikihakiem/folio/barcode"
 
 // BarcodeElement is a layout element that renders a barcode in the document flow.
 type BarcodeElement struct {

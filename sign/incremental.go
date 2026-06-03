@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // incrementalObject is an indirect object to append in an incremental update.

@@ -12,8 +12,8 @@ import "C"
 import (
 	"fmt"
 
-	folioimage "github.com/carlos7ags/folio/image"
-	"github.com/carlos7ags/folio/layout"
+	folioimage "github.com/kikihakiem/folio/image"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // ── Paragraph extensions ───────────────────────────────────────────

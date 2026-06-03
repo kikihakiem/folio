@@ -6,7 +6,7 @@ package layout
 import (
 	"testing"
 
-	"github.com/carlos7ags/folio/svg"
+	"github.com/kikihakiem/folio/svg"
 )
 
 // TestSVGGradientStopOpacityReachesLayoutStops verifies that an SVG

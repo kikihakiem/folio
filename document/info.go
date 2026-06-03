@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // Info holds document metadata written to the PDF trailer's /Info dictionary

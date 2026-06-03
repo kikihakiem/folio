@@ -7,7 +7,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // TestParseBorderFullStyleKeywords pins that the shorthand parser

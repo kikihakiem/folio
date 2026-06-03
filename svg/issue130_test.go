@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/content"
+	"github.com/kikihakiem/folio/content"
 )
 
 // TestImageElementCallsRegisterImage verifies that an <image> element in an

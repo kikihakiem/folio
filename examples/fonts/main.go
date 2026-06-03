@@ -20,8 +20,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/html"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/html"
 )
 
 func main() {

@@ -6,7 +6,7 @@ package html
 import (
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // TestIssue147_BrInsideStrongInList reproduces the exact crash from #147:

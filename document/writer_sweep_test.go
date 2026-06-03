@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // objectCountInBody returns the number of "N G obj" headers in a

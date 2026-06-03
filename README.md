@@ -4,8 +4,8 @@ A PDF library for Go — layout engine, HTML to PDF, text shaping for
 left-to-right, right-to-left, Indic, and CJK scripts, redaction, forms,
 digital signatures, barcodes, page import, and PDF/A compliance.
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/carlos7ags/folio.svg)](https://pkg.go.dev/github.com/carlos7ags/folio)
-[![CI](https://github.com/carlos7ags/folio/actions/workflows/ci.yml/badge.svg)](https://github.com/carlos7ags/folio/actions)
+[![Go Reference](https://pkg.go.dev/badge/github.com/kikihakiem/folio.svg)](https://pkg.go.dev/github.com/kikihakiem/folio)
+[![CI](https://github.com/kikihakiem/folio/actions/workflows/ci.yml/badge.svg)](https://github.com/kikihakiem/folio/actions)
 [![Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 **[Try it live in your browser](https://playground.foliopdf.dev/)**
@@ -17,7 +17,7 @@ digital signatures, barcodes, page import, and PDF/A compliance.
 ## Install
 
 ```bash
-go get github.com/carlos7ags/folio
+go get github.com/kikihakiem/folio
 ```
 
 Requires Go 1.25+. Three external dependencies, all from the Go
@@ -29,8 +29,8 @@ TIFF decoding), `golang.org/x/net` (HTML parsing), and
 
 | Language | Package | Status |
 |----------|---------|--------|
-| **Go** | `go get github.com/carlos7ags/folio` | This repo |
-| **Java** | [`dev.foliopdf:folio-java`](https://central.sonatype.com/artifact/dev.foliopdf/folio-java) | [folio-java](https://github.com/carlos7ags/folio-java) |
+| **Go** | `go get github.com/kikihakiem/folio` | This repo |
+| **Java** | [`dev.foliopdf:folio-java`](https://central.sonatype.com/artifact/dev.foliopdf/folio-java) | [folio-java](https://github.com/kikihakiem/folio-java) |
 | **WASM** | [Playground](https://playground.foliopdf.dev) | Built-in |
 
 ---
@@ -41,9 +41,9 @@ TIFF decoding), `golang.org/x/net` (HTML parsing), and
 package main
 
 import (
-    "github.com/carlos7ags/folio/document"
-    "github.com/carlos7ags/folio/font"
-    "github.com/carlos7ags/folio/layout"
+    "github.com/kikihakiem/folio/document"
+    "github.com/kikihakiem/folio/font"
+    "github.com/kikihakiem/folio/layout"
 )
 
 func main() {
@@ -71,8 +71,8 @@ headless browser, no external service.
 
 ```go
 import (
-    "github.com/carlos7ags/folio/document"
-    "github.com/carlos7ags/folio/html"
+    "github.com/kikihakiem/folio/document"
+    "github.com/kikihakiem/folio/html"
 )
 
 doc := document.NewDocument(document.PageSizeLetter)
@@ -218,7 +218,7 @@ cell.SetVAlign(layout.VAlignMiddle)
 ## Barcodes
 
 ```go
-import "github.com/carlos7ags/folio/barcode"
+import "github.com/kikihakiem/folio/barcode"
 
 qr, _ := barcode.NewQR("https://example.com")
 doc.Add(layout.NewBarcodeElement(qr, 100).SetAlign(layout.AlignCenter))
@@ -235,7 +235,7 @@ doc.Add(layout.NewBarcodeElement(ean, 150))
 ## Interactive Forms
 
 ```go
-import "github.com/carlos7ags/folio/forms"
+import "github.com/kikihakiem/folio/forms"
 
 form := forms.NewAcroForm()
 form.Add(forms.NewTextField("name", [4]float64{72, 700, 300, 720}, 0))
@@ -252,7 +252,7 @@ doc.Save("form.pdf")
 ## Digital Signatures
 
 ```go
-import "github.com/carlos7ags/folio/sign"
+import "github.com/kikihakiem/folio/sign"
 
 signer, _ := sign.NewLocalSigner(privateKey, []*x509.Certificate{cert})
 signed, _ := sign.SignPDF(pdfBytes, sign.Options{
@@ -273,7 +273,7 @@ via the `Signer` interface. Uses Go stdlib crypto.
 ## Reading and Merging PDFs
 
 ```go
-import "github.com/carlos7ags/folio/reader"
+import "github.com/kikihakiem/folio/reader"
 
 // Read
 r, _ := reader.Load("document.pdf")
@@ -386,7 +386,7 @@ layout.Gray(0.5)              // grayscale
 ## CLI
 
 ```bash
-go install github.com/carlos7ags/folio/cmd/folio@latest
+go install github.com/kikihakiem/folio/cmd/folio@latest
 
 folio merge -o combined.pdf doc1.pdf doc2.pdf
 folio info document.pdf
@@ -416,7 +416,7 @@ folio_document_free(doc);
 ```
 
 Pre-built binaries for Linux, macOS, and Windows are attached to each
-[GitHub release](https://github.com/carlos7ags/folio/releases).
+[GitHub release](https://github.com/kikihakiem/folio/releases).
 
 ---
 
@@ -556,7 +556,7 @@ Each [`examples/`](examples/) subdirectory is a self-contained `go run` demo:
 Contributions welcome. Please open an issue before submitting large PRs.
 
 ```bash
-git clone https://github.com/carlos7ags/folio
+git clone https://github.com/kikihakiem/folio
 cd folio
 go test ./...
 ```

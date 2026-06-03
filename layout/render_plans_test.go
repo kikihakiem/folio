@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 func TestRenderSingleParagraph(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 func TestIsCJKIdeograph(t *testing.T) {

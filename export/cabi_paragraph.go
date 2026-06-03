@@ -12,8 +12,8 @@ import "C"
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // folio_paragraph_new creates a paragraph with a standard font and returns its handle.

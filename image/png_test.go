@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // createTestPNG generates a small PNG image in memory.

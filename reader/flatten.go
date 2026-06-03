@@ -6,7 +6,7 @@ package reader
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // FlattenForms renders all form field appearances into the page content

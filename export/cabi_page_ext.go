@@ -12,7 +12,7 @@ import "C"
 import (
 	"unsafe"
 
-	"github.com/carlos7ags/folio/document"
+	"github.com/kikihakiem/folio/document"
 )
 
 //export folio_page_set_art_box

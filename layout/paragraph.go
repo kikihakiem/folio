@@ -8,7 +8,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 // Paragraph is a block of text that word-wraps within the available width.

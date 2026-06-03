@@ -9,7 +9,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/carlos7ags/folio/tmpl"
+	"github.com/kikihakiem/folio/tmpl"
 )
 
 const invoiceTemplate = `<!DOCTYPE html>

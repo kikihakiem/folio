@@ -7,8 +7,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/document"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/document"
 )
 
 // TestParseFolioXRefStreamWriter is the round-trip check for the

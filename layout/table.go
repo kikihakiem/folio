@@ -6,8 +6,8 @@ package layout
 import (
 	"strings"
 
-	"github.com/carlos7ags/folio/content"
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/content"
+	"github.com/kikihakiem/folio/font"
 )
 
 // BorderStyle specifies how a border line is drawn.

@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/carlos7ags/folio/content"
+	"github.com/kikihakiem/folio/content"
 )
 
 // --- Code 128 tests ---

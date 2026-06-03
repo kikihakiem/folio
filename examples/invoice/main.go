@@ -23,10 +23,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 var useTailwind = flag.Bool("tailwind", false, "fetch Tailwind CSS v2 from CDN (2.9MB, slower)")

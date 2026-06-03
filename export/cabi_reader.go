@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/reader"
 )
 
 // folio_reader_open opens an existing PDF file for reading and returns a reader handle.

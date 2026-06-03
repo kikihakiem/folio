@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 // mockIndicFace is a script-agnostic stand-in for a real Indic font.

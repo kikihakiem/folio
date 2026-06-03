@@ -3,7 +3,7 @@
 
 package layout
 
-import "github.com/carlos7ags/folio/content"
+import "github.com/kikihakiem/folio/content"
 
 // LayoutArea describes the available space for laying out an element.
 type LayoutArea struct {

@@ -3,7 +3,7 @@
 
 package reader
 
-import "github.com/carlos7ags/folio/core"
+import "github.com/kikihakiem/folio/core"
 
 // StructNode represents a node in the PDF structure tree.
 type StructNode struct {

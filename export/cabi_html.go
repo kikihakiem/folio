@@ -12,9 +12,9 @@ import "C"
 import (
 	"bytes"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // folio_html_to_pdf converts an HTML string to a PDF file at the given output path.

@@ -13,8 +13,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/layout"
 )
 
 //export folio_document_set_watermark

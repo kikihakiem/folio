@@ -6,7 +6,7 @@ package font
 import (
 	"maps"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // buildObjectsCFF builds the PDF object graph for a CFF-flavored

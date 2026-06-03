@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // TestParseTextAlignStartEnd covers the new direction-relative

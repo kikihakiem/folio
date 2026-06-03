@@ -5,7 +5,7 @@
 // directly into a PDF content stream as vector graphics (no images).
 package barcode
 
-import "github.com/carlos7ags/folio/content"
+import "github.com/kikihakiem/folio/content"
 
 // Barcode is a generated barcode ready to be drawn into a PDF.
 type Barcode struct {

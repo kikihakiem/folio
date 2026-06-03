@@ -25,9 +25,9 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 func main() {

@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/carlos7ags/folio/content"
-	"github.com/carlos7ags/folio/font"
-	folioimage "github.com/carlos7ags/folio/image"
+	"github.com/kikihakiem/folio/content"
+	"github.com/kikihakiem/folio/font"
+	folioimage "github.com/kikihakiem/folio/image"
 )
 
 // Margins defines the page margins in PDF points.

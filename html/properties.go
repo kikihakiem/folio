@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // parseColor parses a CSS color value into a layout.Color.

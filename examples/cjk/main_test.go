@@ -11,9 +11,9 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/carlos7ags/folio/document"
-	folioFont "github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/html"
+	"github.com/kikihakiem/folio/document"
+	folioFont "github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/html"
 )
 
 // TestCJKExampleProducesValidPDF runs the example's HTML build → convert

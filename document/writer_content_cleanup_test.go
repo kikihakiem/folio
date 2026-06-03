@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // addPageWithContents builds a Page dict whose /Contents points at

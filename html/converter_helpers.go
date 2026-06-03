@@ -9,9 +9,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/carlos7ags/folio/font"
-	folioimage "github.com/carlos7ags/folio/image"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/font"
+	folioimage "github.com/kikihakiem/folio/image"
+	"github.com/kikihakiem/folio/layout"
 
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/atom"

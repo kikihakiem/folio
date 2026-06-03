@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/carlos7ags/folio/content"
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/content"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/font"
 )
 
 // WatermarkConfig holds parameters for a diagonal text watermark

@@ -10,7 +10,7 @@ package main
 */
 import "C"
 
-import "github.com/carlos7ags/folio/layout"
+import "github.com/kikihakiem/folio/layout"
 
 // folio_document_set_header_text sets a simple text header that automatically
 // reserves space so content doesn't overlap. The text may contain {page} and

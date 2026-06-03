@@ -13,9 +13,9 @@ import (
 	"fmt"
 	"unsafe"
 
-	foliohtml "github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
-	"github.com/carlos7ags/folio/sign"
+	foliohtml "github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
+	"github.com/kikihakiem/folio/sign"
 )
 
 // ── Document convenience ──────────────────────────────────────────

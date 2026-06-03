@@ -22,10 +22,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 func main() {
@@ -65,8 +65,8 @@ hr { margin: 6px 0; }
 <hr/>
 
 <h2>External Hyperlinks</h2>
-<p><a href="https://github.com/carlos7ags/folio">Folio on GitHub</a></p>
-<p><a href="https://pkg.go.dev/github.com/carlos7ags/folio">Go Package Documentation (pkg.go.dev)</a></p>
+<p><a href="https://github.com/kikihakiem/folio">Folio on GitHub</a></p>
+<p><a href="https://pkg.go.dev/github.com/kikihakiem/folio">Go Package Documentation (pkg.go.dev)</a></p>
 <p><a href="https://www.example.com">Example.com</a></p>
 
 <h2>Inline Links in Paragraphs</h2>
@@ -126,7 +126,7 @@ hr { margin: 6px 0; }
 	doc.Add(sectionHeading("External Links"))
 	doc.Add(layout.NewLink(
 		"Folio on GitHub",
-		"https://github.com/carlos7ags/folio",
+		"https://github.com/kikihakiem/folio",
 		font.Helvetica, 11,
 	).SetColor(layout.RGB(0.15, 0.39, 0.92)).SetUnderline())
 	doc.Add(spacer(2))
@@ -190,7 +190,7 @@ hr { margin: 6px 0; }
 		layout.NewRun("Folio repository", font.Helvetica, 10).
 			WithColor(layout.RGB(0.15, 0.39, 0.92)).
 			WithDecoration(layout.DecorationUnderline).
-			WithLinkURI("https://github.com/carlos7ags/folio"),
+			WithLinkURI("https://github.com/kikihakiem/folio"),
 	})
 	list.AddItemRuns([]layout.TextRun{
 		layout.NewRun("See the ", font.Helvetica, 10),

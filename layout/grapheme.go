@@ -3,11 +3,11 @@
 
 package layout
 
-import "github.com/carlos7ags/folio/unicode/grapheme"
+import "github.com/kikihakiem/folio/unicode/grapheme"
 
 // This file is a thin re-export shim. The extended grapheme cluster
 // algorithm (UAX #29 §3.1.1, rules GB1–GB13) lives in the
-// github.com/carlos7ags/folio/unicode/grapheme package so that lower
+// github.com/kikihakiem/folio/unicode/grapheme package so that lower
 // layers — font metrics in particular — can use cluster boundaries
 // without taking a dependency on layout. See that package for the full
 // implementation, rule references, and the scope of the

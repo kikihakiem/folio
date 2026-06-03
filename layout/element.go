@@ -3,7 +3,7 @@
 
 package layout
 
-import "github.com/carlos7ags/folio/font"
+import "github.com/kikihakiem/folio/font"
 
 // Align specifies horizontal text alignment.
 type Align int

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/content"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/content"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // TestIssue130_Gap2_LinearGradientProducesImageXObject confirms that a

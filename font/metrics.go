@@ -6,7 +6,7 @@ package font
 import (
 	"unicode/utf8"
 
-	"github.com/carlos7ags/folio/unicode/grapheme"
+	"github.com/kikihakiem/folio/unicode/grapheme"
 )
 
 // TextMeasurer measures the width of text for layout purposes.

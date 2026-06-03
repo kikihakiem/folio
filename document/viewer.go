@@ -3,7 +3,7 @@
 
 package document
 
-import "github.com/carlos7ags/folio/core"
+import "github.com/kikihakiem/folio/core"
 
 // PageLayout controls how pages are displayed when the document is opened.
 type PageLayout string

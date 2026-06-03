@@ -8,7 +8,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // contentsPlaceholderLen is the byte length of the hex-encoded /Contents value.

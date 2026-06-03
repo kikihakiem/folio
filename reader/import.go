@@ -6,7 +6,7 @@ package reader
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // PageImport holds the data needed to import an existing PDF page into

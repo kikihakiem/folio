@@ -22,7 +22,7 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // makeJPEGBytes returns a small encoded JPEG for tests.

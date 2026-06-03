@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // cssProperty is a declarative descriptor for a single CSS property

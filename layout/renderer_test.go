@@ -10,8 +10,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
-	folioimage "github.com/carlos7ags/folio/image"
+	"github.com/kikihakiem/folio/font"
+	folioimage "github.com/kikihakiem/folio/image"
 )
 
 func TestRendererSingleParagraph(t *testing.T) {

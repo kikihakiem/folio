@@ -7,7 +7,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 func TestParagraphSingleLine(t *testing.T) {

@@ -7,7 +7,7 @@
 package forms
 
 import (
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // FieldType identifies the kind of form field.

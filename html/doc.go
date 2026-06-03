@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Package html converts HTML+CSS markup into layout elements that the
-// [github.com/carlos7ags/folio/layout] package can render to PDF.
+// [github.com/kikihakiem/folio/layout] package can render to PDF.
 //
 // The converter parses an HTML string (via golang.org/x/net/html),
 // resolves inline and <style> CSS, and produces a tree of

@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"crypto/sha256"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // deduplicateObjects merges byte-identical indirect objects so the

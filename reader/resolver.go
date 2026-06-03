@@ -8,7 +8,7 @@ import (
 	"compress/zlib"
 	"fmt"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // resolver fetches and caches PDF objects by their object number.

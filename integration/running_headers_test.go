@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/reader"
 )
 
 func TestRunningHeaderStringSet(t *testing.T) {

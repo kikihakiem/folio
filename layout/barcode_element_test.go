@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/barcode"
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/barcode"
+	"github.com/kikihakiem/folio/font"
 )
 
 func TestBarcodeElementCode128(t *testing.T) {

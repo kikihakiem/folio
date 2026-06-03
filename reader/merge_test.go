@@ -10,8 +10,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/font"
 )
 
 func makePDF(t *testing.T, title string, pages int) []byte {

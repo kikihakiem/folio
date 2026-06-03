@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 	xhtml "golang.org/x/net/html"
 )
 

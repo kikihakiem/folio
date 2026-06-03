@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // --- Text color on bare text nodes ---

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // renderHTML is a small helper used across the bookmark integration

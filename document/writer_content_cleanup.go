@@ -6,7 +6,7 @@ package document
 import (
 	"bytes"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // cleanContentStreams removes redundant operators from page content

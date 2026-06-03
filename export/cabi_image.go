@@ -13,8 +13,8 @@ import (
 	"fmt"
 	"unsafe"
 
-	folioimage "github.com/carlos7ags/folio/image"
-	"github.com/carlos7ags/folio/layout"
+	folioimage "github.com/kikihakiem/folio/image"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // folio_image_load_jpeg loads a JPEG image from a file path and returns its handle.

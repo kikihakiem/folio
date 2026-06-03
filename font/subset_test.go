@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 func loadTestFont(t *testing.T) []byte {

@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/font"
 )
 
 func main() {

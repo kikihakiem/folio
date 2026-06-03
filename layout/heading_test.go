@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 func TestHeadingH1DefaultSize(t *testing.T) {

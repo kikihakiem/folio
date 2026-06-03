@@ -7,7 +7,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 func TestParseCMYKPercentRed(t *testing.T) {

@@ -21,7 +21,7 @@ import "C"
 import (
 	"unsafe"
 
-	"github.com/carlos7ags/folio/document"
+	"github.com/kikihakiem/folio/document"
 )
 
 // folio_document_set_header registers a C callback invoked on each page to render a header.

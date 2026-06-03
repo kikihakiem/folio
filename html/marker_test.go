@@ -6,7 +6,7 @@ package html
 import (
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 func TestMarkerPseudoElementColor(t *testing.T) {

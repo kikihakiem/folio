@@ -9,7 +9,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/reader"
 )
 
 // examplePDFBytes runs the example pipeline against the bundled
@@ -114,7 +114,7 @@ func TestHTMLToPDFExampleLinkAnnotationTargetsRepo(t *testing.T) {
 	if !strings.Contains(pdf, "/Subtype /Link") {
 		t.Fatal("no /Subtype /Link annotation; the <a href> in the footer should emit one")
 	}
-	const wantURL = "https://github.com/carlos7ags/folio"
+	const wantURL = "https://github.com/kikihakiem/folio"
 	if !strings.Contains(pdf, wantURL) {
 		t.Errorf("link URI %q not present in PDF; check that the <a href> destination survives layout/serialization", wantURL)
 	}

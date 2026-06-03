@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // testCFFFontPath returns a path to a CID-keyed CFF font (the dispatch

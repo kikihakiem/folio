@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/reader"
 )
 
 // folio_reader_merge merges multiple PDF reader handles into a single modifiable document.

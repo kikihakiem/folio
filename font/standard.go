@@ -14,7 +14,7 @@
 // methods.
 package font
 
-import "github.com/carlos7ags/folio/core"
+import "github.com/kikihakiem/folio/core"
 
 // Standard represents one of the 14 standard PDF fonts that every
 // conforming viewer must support (ISO 32000 §9.6.2.2).

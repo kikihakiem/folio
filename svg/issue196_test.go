@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/content"
+	"github.com/kikihakiem/folio/content"
 )
 
 // TestSliceEmitsViewportClip verifies that slice mode emits a clip

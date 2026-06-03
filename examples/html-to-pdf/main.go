@@ -30,9 +30,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 const reportHTML = `<!DOCTYPE html>
@@ -234,7 +234,7 @@ const reportHTML = `<!DOCTYPE html>
     </div>
 
     <div class="footer">
-      Generated March 24, 2026 &mdash; <a href="https://github.com/carlos7ags/folio">Built with Folio</a>
+      Generated March 24, 2026 &mdash; <a href="https://github.com/kikihakiem/folio">Built with Folio</a>
     </div>
 
     <div class="confidential">Confidential &mdash; Do Not Distribute</div>

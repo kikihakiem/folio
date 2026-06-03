@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/carlos7ags/folio/content"
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/font"
-	folioimage "github.com/carlos7ags/folio/image"
+	"github.com/kikihakiem/folio/content"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/font"
+	folioimage "github.com/kikihakiem/folio/image"
 )
 
 // PageSize defines the dimensions of a page in PDF points (1 point = 1/72 inch).

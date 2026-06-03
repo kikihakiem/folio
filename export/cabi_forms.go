@@ -13,9 +13,9 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/forms"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/forms"
 )
 
 // folio_form_new creates a new empty AcroForm and returns its handle.

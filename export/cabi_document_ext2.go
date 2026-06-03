@@ -13,9 +13,9 @@ import (
 	"os"
 	"unsafe"
 
-	"github.com/carlos7ags/folio/document"
-	foliohtml "github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	foliohtml "github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // ── File attachments ───────────────────────────────────────────────

@@ -12,7 +12,7 @@ import "C"
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 //export folio_float_new

@@ -4,7 +4,7 @@
 package reader
 
 import (
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // Copier copies objects from a PdfReader into a document writer,

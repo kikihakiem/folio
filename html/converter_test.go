@@ -17,8 +17,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/layout"
 
 	htmlparse "golang.org/x/net/html"
 )
@@ -5682,7 +5682,7 @@ func TestConvertFontFaceParsing(t *testing.T) {
 // TestCustomFontFamilyResolution verifies that a custom @font-face family
 // name is preserved through CSS parsing and matched against embedded fonts
 // during resolution, rather than being mapped to "helvetica". This is the
-// regression test for https://github.com/carlos7ags/folio/issues/16.
+// regression test for https://github.com/kikihakiem/folio/issues/16.
 func TestCustomFontFamilyResolution(t *testing.T) {
 	// Construct a converter with a mock embedded font entry keyed as
 	// "noto|400|normal" — simulating a loaded @font-face with
@@ -6986,7 +6986,7 @@ func TestCSSColumnSpanEmptyMulticolDoesNotDoubleWalk(t *testing.T) {
 // TestCSSColumnsSequentialBalanced verifies that multi-column children are
 // distributed by measured height (column-fill: balance) rather than
 // round-robin by index. Regression test for
-// https://github.com/carlos7ags/folio/issues/145.
+// https://github.com/kikihakiem/folio/issues/145.
 func TestCSSColumnsSequentialBalanced(t *testing.T) {
 	// Three paragraphs with very different lengths. With round-robin
 	// the long paragraph and a short paragraph share column 0 while

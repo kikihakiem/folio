@@ -11,9 +11,9 @@ import (
 	"encoding/json"
 	"syscall/js"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 type renderSettings struct {

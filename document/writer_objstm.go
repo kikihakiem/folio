@@ -6,7 +6,7 @@ package document
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // defaultObjectStreamCapacity is the cap on the number of objects packed

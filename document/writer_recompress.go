@@ -4,7 +4,7 @@
 package document
 
 import (
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // recompressStreams walks every registered indirect object and, for

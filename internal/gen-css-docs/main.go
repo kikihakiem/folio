@@ -12,7 +12,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/carlos7ags/folio/html"
+	"github.com/kikihakiem/folio/html"
 )
 
 func main() {

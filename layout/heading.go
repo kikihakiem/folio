@@ -6,7 +6,7 @@ package layout
 import (
 	"strings"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 // HeadingLevel represents H1 through H6.

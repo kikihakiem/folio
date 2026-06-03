@@ -3,7 +3,7 @@
 
 package html
 
-import "github.com/carlos7ags/folio/layout"
+import "github.com/kikihakiem/folio/layout"
 
 // computedStyle holds the resolved CSS properties for a single HTML node.
 type computedStyle struct {

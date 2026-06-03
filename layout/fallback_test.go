@@ -6,7 +6,7 @@ package layout
 import (
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 // fakeFace is a stub font.Face that resolves rune coverage from an

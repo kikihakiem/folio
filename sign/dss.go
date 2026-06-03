@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // DSS (Document Security Store) holds validation data for long-term

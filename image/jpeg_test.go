@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // createTestJPEG generates a small JPEG image in memory.

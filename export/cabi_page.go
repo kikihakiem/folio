@@ -12,8 +12,8 @@ import "C"
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/font"
 )
 
 // folio_page_add_text draws text on a low-level page using a standard font at the given position.

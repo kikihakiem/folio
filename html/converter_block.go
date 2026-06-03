@@ -6,7 +6,7 @@ package html
 import (
 	"strings"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/atom"
@@ -416,7 +416,7 @@ func (c *converter) buildMulticolSegments(n *html.Node, style computedStyle) []l
 // Children flow sequentially into column 0 and are redistributed at layout
 // time via the balanced-fill algorithm so that column heights are equalized
 // while preserving document order (CSS Multi-column §3.4, column-fill:
-// balance). See https://github.com/carlos7ags/folio/issues/145.
+// balance). See https://github.com/kikihakiem/folio/issues/145.
 func (c *converter) buildColumnsSegment(children []layout.Element, style computedStyle) layout.Element {
 	cols := layout.NewColumns(style.ColumnCount).SetBalanced(true)
 	if style.ColumnGap > 0 {

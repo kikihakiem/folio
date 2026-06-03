@@ -10,8 +10,8 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // TestFallbackChainResolvesTTCViaBaseFS pins the end-to-end claim from

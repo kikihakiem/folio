@@ -10,7 +10,7 @@ package main
 */
 import "C"
 
-import "github.com/carlos7ags/folio/reader"
+import "github.com/kikihakiem/folio/reader"
 
 // folio_extract_page_import extracts a page from a parsed PDF for importing
 // into a new document. Returns a PageImport handle on success, 0 on failure.

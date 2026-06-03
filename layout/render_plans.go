@@ -6,7 +6,7 @@ package layout
 import (
 	"math"
 
-	"github.com/carlos7ags/folio/content"
+	"github.com/kikihakiem/folio/content"
 )
 
 // renderWithPlans lays out elements into pages using PlanLayout.

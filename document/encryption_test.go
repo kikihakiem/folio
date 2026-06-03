@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/layout"
 )
 
 func encryptedDoc(t *testing.T, alg EncryptionAlgorithm, userPwd, ownerPwd string, perms core.Permission) []byte {

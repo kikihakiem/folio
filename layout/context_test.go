@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 func newTestRenderer() *Renderer {

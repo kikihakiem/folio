@@ -6,7 +6,7 @@ package image
 import (
 	goimage "image"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // Image holds decoded image data ready for embedding in a PDF.

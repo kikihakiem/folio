@@ -6,7 +6,7 @@ package layout
 import (
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 func TestBorderCollapseRemovesDuplicates(t *testing.T) {

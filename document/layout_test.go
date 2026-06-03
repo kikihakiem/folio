@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/layout"
 )
 
 func TestDocumentAddParagraph(t *testing.T) {

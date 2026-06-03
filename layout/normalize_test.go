@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/content"
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/content"
+	"github.com/kikihakiem/folio/font"
 )
 
 // Decomposed "café" = c + a + f + e + U+0301 (combining acute accent).

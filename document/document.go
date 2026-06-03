@@ -13,9 +13,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // PageContext provides page information to header/footer decorators.

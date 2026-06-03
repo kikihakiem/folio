@@ -12,8 +12,8 @@ import "C"
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/barcode"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/barcode"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // folio_barcode_qr generates a QR code barcode and returns its handle.

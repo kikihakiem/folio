@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // IndirectObject pairs a PdfObject with its object/generation numbers

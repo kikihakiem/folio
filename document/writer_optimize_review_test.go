@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // Tests added in response to the phase-1 review of the optimizer.

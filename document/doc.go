@@ -16,6 +16,6 @@
 //	doc.WriteTo(file)
 //
 // For HTML-to-PDF conversion, use [Document.AddHTML] which delegates
-// to the [github.com/carlos7ags/folio/html] converter and feeds the
+// to the [github.com/kikihakiem/folio/html] converter and feeds the
 // resulting layout elements into the document.
 package document

@@ -3,7 +3,7 @@
 
 package document
 
-import "github.com/carlos7ags/folio/core"
+import "github.com/kikihakiem/folio/core"
 
 // StructTag is a standard PDF structure type (ISO 32000 §14.8.4).
 type StructTag string

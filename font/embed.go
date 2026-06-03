@@ -9,7 +9,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // EmbeddedFont tracks which glyphs of a Face have been used in a document

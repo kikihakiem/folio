@@ -22,8 +22,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/reader"
 )
 
 // PAdESLevel specifies the PAdES conformance level.

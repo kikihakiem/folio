@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"html/template"
 
-	foliohtml "github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	foliohtml "github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // AddHTML parses an HTML string and adds the resulting layout elements to the

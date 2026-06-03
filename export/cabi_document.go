@@ -13,8 +13,8 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // folio_document_new creates a new document with a custom page size in points.

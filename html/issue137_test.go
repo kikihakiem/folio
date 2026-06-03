@@ -6,7 +6,7 @@ package html
 import (
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // Regression tests for issue #137: `!important` cascade tiers for author

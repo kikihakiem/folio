@@ -6,8 +6,8 @@ package reader
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/content"
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/content"
+	"github.com/kikihakiem/folio/core"
 )
 
 // buildRedactionOverlay creates a content stream that draws opaque

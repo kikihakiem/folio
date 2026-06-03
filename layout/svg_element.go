@@ -7,9 +7,9 @@ import (
 	"encoding/base64"
 	"strings"
 
-	"github.com/carlos7ags/folio/font"
-	folioimage "github.com/carlos7ags/folio/image"
-	"github.com/carlos7ags/folio/svg"
+	"github.com/kikihakiem/folio/font"
+	folioimage "github.com/kikihakiem/folio/image"
+	"github.com/kikihakiem/folio/svg"
 )
 
 // SVGElement is a layout element that renders an SVG graphic in the document flow.

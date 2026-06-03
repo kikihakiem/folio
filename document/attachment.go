@@ -6,7 +6,7 @@ package document
 import (
 	"time"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // FileAttachment describes a file to be embedded in the PDF.

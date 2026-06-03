@@ -9,7 +9,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/reader"
 )
 
 var examplePDFBytes = sync.OnceValue(func() []byte {
@@ -81,7 +81,7 @@ func TestLinksExampleEmitsLinkAnnotations(t *testing.T) {
 func TestLinksExampleHTMLLinkTargetsPreserved(t *testing.T) {
 	pdf := string(examplePDFBytes())
 	for _, want := range []string{
-		"https://github.com/carlos7ags/folio",
+		"https://github.com/kikihakiem/folio",
 		"https://pkg.go.dev",
 	} {
 		if !strings.Contains(pdf, want) {

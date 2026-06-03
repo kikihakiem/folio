@@ -1,4 +1,4 @@
-module github.com/carlos7ags/folio
+module github.com/kikihakiem/folio
 
 go 1.25.0
 

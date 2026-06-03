@@ -9,8 +9,8 @@ import (
 	"image/png"
 	"math"
 
-	folioimage "github.com/carlos7ags/folio/image"
-	"github.com/carlos7ags/folio/svg"
+	folioimage "github.com/kikihakiem/folio/image"
+	"github.com/kikihakiem/folio/svg"
 )
 
 // rasterizeSVGGradient rasterizes an SVG <linearGradient> or <radialGradient>

@@ -13,7 +13,7 @@ import (
 	"regexp"
 	"unsafe"
 
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/reader"
 )
 
 // folio_redact_text redacts all occurrences of each target string from a PDF.

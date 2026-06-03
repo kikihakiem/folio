@@ -8,7 +8,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/carlos7ags/folio/document"
+	"github.com/kikihakiem/folio/document"
 )
 
 func TestReadPageBoxes(t *testing.T) {

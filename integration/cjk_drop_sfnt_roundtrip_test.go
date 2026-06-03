@@ -12,9 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/reader"
 )
 
 // TestCJKDropSfntRoundTripsThroughPDFExtraction is the end-to-end

@@ -13,8 +13,8 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/carlos7ags/folio/layout"
-	"github.com/carlos7ags/folio/svg"
+	"github.com/kikihakiem/folio/layout"
+	"github.com/kikihakiem/folio/svg"
 )
 
 //export folio_svg_parse

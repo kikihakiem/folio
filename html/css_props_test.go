@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // TestCSSPropertyRegistryWiring verifies that the registry contains

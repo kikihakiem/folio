@@ -10,7 +10,7 @@ import (
 	"math"
 	"testing"
 
-	folioimage "github.com/carlos7ags/folio/image"
+	folioimage "github.com/kikihakiem/folio/image"
 )
 
 // makeImage creates a JPEG of the requested pixel dimensions for

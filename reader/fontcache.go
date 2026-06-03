@@ -4,8 +4,8 @@
 package reader
 
 import (
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/font"
 )
 
 // FontEntry holds the decoded character mapping and glyph widths

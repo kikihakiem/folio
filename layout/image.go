@@ -6,7 +6,7 @@ package layout
 import (
 	"fmt"
 
-	folioimage "github.com/carlos7ags/folio/image"
+	folioimage "github.com/kikihakiem/folio/image"
 )
 
 // ImageElement is a layout element that places an image in the document flow.

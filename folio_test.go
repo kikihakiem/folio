@@ -7,8 +7,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/carlos7ags/folio"
-	"github.com/carlos7ags/folio/document"
+	"github.com/kikihakiem/folio"
+	"github.com/kikihakiem/folio/document"
 )
 
 // TestFacadeRoundTrip exercises the façade end to end: construct via the

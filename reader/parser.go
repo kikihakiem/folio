@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // Parser builds PDF objects from a token stream.

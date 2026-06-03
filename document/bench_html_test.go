@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/html"
+	"github.com/kikihakiem/folio/html"
 )
 
 // ---------------------------------------------------------------------------

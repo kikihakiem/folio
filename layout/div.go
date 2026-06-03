@@ -3,7 +3,7 @@
 
 package layout
 
-import folioimage "github.com/carlos7ags/folio/image"
+import folioimage "github.com/kikihakiem/folio/image"
 
 // ResolvableLength is a length that resolves lazily against a container
 // dimension at draw time. Defined in layout (rather than imported from

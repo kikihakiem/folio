@@ -9,9 +9,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	folioimage "github.com/carlos7ags/folio/image"
-	"github.com/carlos7ags/folio/layout"
-	"github.com/carlos7ags/folio/svg"
+	folioimage "github.com/kikihakiem/folio/image"
+	"github.com/kikihakiem/folio/layout"
+	"github.com/kikihakiem/folio/svg"
 
 	"golang.org/x/net/html"
 )

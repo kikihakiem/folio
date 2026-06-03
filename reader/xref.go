@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/carlos7ags/folio/core"
+	"github.com/kikihakiem/folio/core"
 )
 
 // xrefEntry is a single entry in the cross-reference table.

@@ -9,8 +9,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/carlos7ags/folio/reader"
-	"github.com/carlos7ags/folio/tmpl"
+	"github.com/kikihakiem/folio/reader"
+	"github.com/kikihakiem/folio/tmpl"
 )
 
 // examplePDFBytes renders the example invoice once and caches the

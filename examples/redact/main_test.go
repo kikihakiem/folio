@@ -9,7 +9,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/carlos7ags/folio/reader"
+	"github.com/kikihakiem/folio/reader"
 )
 
 // examplePDFBytes runs the example's redaction pipeline once and

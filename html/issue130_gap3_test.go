@@ -3,7 +3,7 @@ package html
 import (
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // TestIssue130_Gap3_InlineSVGInParagraph asserts that an inline <svg> placed

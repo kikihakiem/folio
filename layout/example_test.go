@@ -6,9 +6,9 @@ package layout_test
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/barcode"
-	"github.com/carlos7ags/folio/font"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/barcode"
+	"github.com/kikihakiem/folio/font"
+	"github.com/kikihakiem/folio/layout"
 )
 
 func ExampleParagraph() {

@@ -17,9 +17,9 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/carlos7ags/folio/document"
-	foliohtml "github.com/carlos7ags/folio/html"
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/document"
+	foliohtml "github.com/kikihakiem/folio/html"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // executeHTML is a test helper that runs the template engine and returns

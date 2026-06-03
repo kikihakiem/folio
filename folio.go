@@ -17,11 +17,11 @@
 //
 // This façade intentionally covers only the document-construction surface.
 // Specialized APIs keep their own packages: HTML conversion in
-// github.com/carlos7ags/folio/html, the layout engine in .../layout, and
+// github.com/kikihakiem/folio/html, the layout engine in .../layout, and
 // font handling in .../font. Reach for those subpackages directly.
 package folio
 
-import "github.com/carlos7ags/folio/document"
+import "github.com/kikihakiem/folio/document"
 
 // Core document types, re-exported as aliases from the document package.
 type (

@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/carlos7ags/folio/layout"
+	"github.com/kikihakiem/folio/layout"
 )
 
 // TestURLPolicyBlocksImgSrc verifies that URLPolicy blocks <img src="http://...">

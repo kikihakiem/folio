@@ -13,14 +13,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/carlos7ags/folio/barcode"
-	"github.com/carlos7ags/folio/core"
-	"github.com/carlos7ags/folio/document"
-	"github.com/carlos7ags/folio/font"
-	folioimage "github.com/carlos7ags/folio/image"
-	"github.com/carlos7ags/folio/layout"
-	"github.com/carlos7ags/folio/reader"
-	"github.com/carlos7ags/folio/svg"
+	"github.com/kikihakiem/folio/barcode"
+	"github.com/kikihakiem/folio/core"
+	"github.com/kikihakiem/folio/document"
+	"github.com/kikihakiem/folio/font"
+	folioimage "github.com/kikihakiem/folio/image"
+	"github.com/kikihakiem/folio/layout"
+	"github.com/kikihakiem/folio/reader"
+	"github.com/kikihakiem/folio/svg"
 )
 
 // qpdfCheck validates PDF bytes with qpdf --check.
@@ -333,7 +333,7 @@ func TestMultiFeatureKitchenSink(t *testing.T) {
 	// Barcodes
 	doc.Add(layout.NewHeading("Barcodes", layout.H3))
 
-	qrCode, err := barcode.NewQR("https://github.com/carlos7ags/folio")
+	qrCode, err := barcode.NewQR("https://github.com/kikihakiem/folio")
 	if err != nil {
 		t.Fatalf("barcode.NewQR: %v", err)
 	}

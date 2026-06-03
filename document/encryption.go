@@ -3,7 +3,7 @@
 
 package document
 
-import "github.com/carlos7ags/folio/core"
+import "github.com/kikihakiem/folio/core"
 
 // EncryptionAlgorithm selects the encryption scheme.
 type EncryptionAlgorithm int

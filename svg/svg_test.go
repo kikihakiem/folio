@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/carlos7ags/folio/content"
+	"github.com/kikihakiem/folio/content"
 )
 
 const epsilon = 0.001

@@ -6,7 +6,7 @@ package layout
 import (
 	"fmt"
 
-	"github.com/carlos7ags/folio/font"
+	"github.com/kikihakiem/folio/font"
 )
 
 // ListStyle determines the marker style for list items.
