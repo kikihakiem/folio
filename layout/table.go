@@ -388,7 +388,15 @@ func (t *Table) buildGridRow(row *Row, colWidths []float64) gridRow {
 func gridRowCellText(gr gridRow, col int) string {
 	for _, gc := range gr.cells {
 		if gc.col == col {
-			return gc.cell.text
+			if gc.cell.text != "" {
+				return gc.cell.text
+			}
+			// HTML-converted cells hold their text in a Paragraph element.
+			if p, ok := gc.cell.content.(*Paragraph); ok {
+				return p.PlainText()
+			}
+
+			return ""
 		}
 	}
 

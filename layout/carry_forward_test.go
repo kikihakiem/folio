@@ -23,7 +23,10 @@ func buildCarryTable(withCarry bool) *Table {
 	for i := 0; i < 12; i++ {
 		r := tbl.AddRow()
 		r.AddCell(fmt.Sprintf("row %d", i), font.Helvetica, 10)
-		r.AddCell(fmt.Sprintf("%d", (i+1)*100), font.Helvetica, 10)
+		// Balance cell as a Paragraph element (mirrors the HTML converter, which
+		// builds <td> content as elements) so the carry value extraction must
+		// read the element text, not Cell.text.
+		r.AddCellElement(NewParagraph(fmt.Sprintf("%d", (i+1)*100), font.Helvetica, 10))
 	}
 
 	if withCarry {

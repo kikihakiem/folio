@@ -92,6 +92,17 @@ func NewStyledParagraph(runs ...TextRun) *Paragraph {
 	}
 }
 
+// PlainText returns the paragraph's text with all runs concatenated (no
+// styling). Used by table carry-forward to read a cell's running-balance value.
+func (p *Paragraph) PlainText() string {
+	var sb strings.Builder
+	for _, r := range p.runs {
+		sb.WriteString(r.Text)
+	}
+
+	return sb.String()
+}
+
 // AddRun appends a styled run to the paragraph.
 // Panics if the run has both Font and Embedded nil (unless InlineElement
 // or IsLineBreak is set).
