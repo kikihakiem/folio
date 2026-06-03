@@ -924,6 +924,21 @@ func (t *Table) PlanLayout(area LayoutArea) LayoutPlan {
 
 	sv := t.effectiveSpacingV()
 
+	// Orphan control: a table's repeating header rows must never land on a page
+	// without at least one body row (and any footer) beneath them. If the
+	// minimum fragment — all header rows + the first body row + footer reserve —
+	// doesn't fit in the offered height, defer the whole table. The renderer
+	// moves it to a fresh page on LayoutNothing; at a fresh page top it offers
+	// full height so this can't loop (the page-top force-place path backstops
+	// the degenerate case of a header + row taller than a whole page).
+	if headerRowCount > 0 && headerRowCount < bodyEnd {
+		minFragment := headerHeight + grid[headerRowCount].height +
+			float64(headerRowCount+1)*sv + footerHeight
+		if minFragment > area.Height {
+			return LayoutPlan{Status: LayoutNothing}
+		}
+	}
+
 	// Build blocks row by row, checking height.
 	var blocks []PlacedBlock
 	curY := 0.0
