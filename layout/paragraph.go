@@ -92,6 +92,27 @@ func NewStyledParagraph(runs ...TextRun) *Paragraph {
 	}
 }
 
+// WithText returns a copy of p whose runs are replaced by a single run carrying
+// s, inheriting the first run's font (standard or embedded), size and colour,
+// plus p's paragraph-level styling (align, leading, …). Used by table
+// carry-forward to fill a value cell while keeping the column's exact font, so
+// the balance stays glyph-aligned with the data rows.
+func (p *Paragraph) WithText(s string) *Paragraph {
+	np := *p
+
+	var r TextRun
+	if len(p.runs) > 0 {
+		r = p.runs[0]
+		r.InlineElement = nil
+		r.IsLineBreak = false
+	}
+
+	r.Text = normalizeText(s)
+	np.runs = []TextRun{r}
+
+	return &np
+}
+
 // PlainText returns the paragraph's text with all runs concatenated (no
 // styling). Used by table carry-forward to read a cell's running-balance value.
 func (p *Paragraph) PlainText() string {

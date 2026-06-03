@@ -411,8 +411,15 @@ func cloneRowWithValue(row *Row, valueIdx int, value string) *Row {
 	for i, c := range row.cells {
 		cc := *c
 		if i == valueIdx {
-			cc.text = value
-			cc.content = nil
+			// Prefer replacing the template paragraph's text so the value keeps
+			// the column's embedded font (Cell.text falls back to a standard
+			// font, which would mis-size monospace figures).
+			if p, ok := cc.content.(*Paragraph); ok {
+				cc.content = p.WithText(value)
+			} else {
+				cc.text = value
+				cc.content = nil
+			}
 		}
 
 		nr.cells = append(nr.cells, &cc)

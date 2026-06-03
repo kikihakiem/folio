@@ -30,13 +30,15 @@ func buildCarryTable(withCarry bool) *Table {
 	}
 
 	if withCarry {
+		// Value cell as a Paragraph element (mirrors the HTML converter) so the
+		// clone-and-fill must preserve the element's font via Paragraph.WithText.
 		carried := NewRow()
 		carried.AddCell("Carried forward", font.Helvetica, 9)
-		carried.AddCell("", font.Helvetica, 9)
+		carried.AddCellElement(NewParagraph("0", font.Helvetica, 9))
 
 		brought := NewRow()
 		brought.AddCell("Brought forward", font.Helvetica, 9)
-		brought.AddCell("", font.Helvetica, 9)
+		brought.AddCellElement(NewParagraph("0", font.Helvetica, 9))
 
 		tbl.SetCarriedRow(carried, 1, 1) // value cell index 1, balance is column 1
 		tbl.SetBroughtRow(brought, 1, 1)
@@ -79,7 +81,12 @@ func TestTableCarryForward(t *testing.T) {
 		t.Fatalf("expected brought-forward row first in continuation, got label %q", bf.cells[0].text)
 	}
 
-	if bf.cells[1].text == "" {
+	p, ok := bf.cells[1].content.(*Paragraph)
+	if !ok {
+		t.Fatalf("brought-forward value cell lost its element font (got text cell %q)", bf.cells[1].text)
+	}
+
+	if p.PlainText() == "" {
 		t.Fatal("brought-forward value cell was not filled with the running balance")
 	}
 }
