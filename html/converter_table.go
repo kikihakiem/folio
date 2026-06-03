@@ -22,6 +22,7 @@ func (c *converter) convertTable(n *html.Node, style computedStyle) []layout.Ele
 
 	var elems []layout.Element
 	tbl := layout.NewTable()
+	tbl.SetKeepHeaderRows(c.opts.KeepHeaderRows)
 
 	// Parse border attribute (HTML4 style).
 	borderWidth := 0.0
@@ -131,6 +132,7 @@ func (c *converter) convertTable(n *html.Node, style computedStyle) []layout.Ele
 // from children with display:table-row and display:table-cell.
 func (c *converter) convertCSSTable(n *html.Node, style computedStyle) []layout.Element {
 	tbl := layout.NewTable()
+	tbl.SetKeepHeaderRows(c.opts.KeepHeaderRows)
 	tbl.SetAutoColumnWidths()
 
 	if style.BorderCollapse == "collapse" {

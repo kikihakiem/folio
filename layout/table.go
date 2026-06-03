@@ -280,11 +280,23 @@ type Table struct {
 	cellSpacingH   float64     // horizontal spacing between cells (CSS border-spacing)
 	cellSpacingV   float64     // vertical spacing between cells (CSS border-spacing)
 	direction      Direction   // text direction; RTL reverses column order
+	keepHeaderRows int         // min body rows kept with the header on a fragment (orphan control; <1 = 1)
 }
 
 // NewTable creates a new empty table.
 func NewTable() *Table {
 	return &Table{}
+}
+
+// SetKeepHeaderRows sets the orphan-control threshold: the minimum number of
+// body rows that must fit alongside the repeated header rows on a page,
+// otherwise PlanLayout defers the whole table to the next page rather than
+// stranding the header with too few rows. Values < 1 behave as 1 (the header
+// must keep at least its first body row, never overflowing the page box). A
+// table with fewer total body rows than n keeps all of them.
+func (t *Table) SetKeepHeaderRows(n int) *Table {
+	t.keepHeaderRows = n
+	return t
 }
 
 // SetColumnWidths sets explicit column widths in points.
@@ -925,15 +937,28 @@ func (t *Table) PlanLayout(area LayoutArea) LayoutPlan {
 	sv := t.effectiveSpacingV()
 
 	// Orphan control: a table's repeating header rows must never land on a page
-	// without at least one body row (and any footer) beneath them. If the
-	// minimum fragment — all header rows + the first body row + footer reserve —
-	// doesn't fit in the offered height, defer the whole table. The renderer
-	// moves it to a fresh page on LayoutNothing; at a fresh page top it offers
-	// full height so this can't loop (the page-top force-place path backstops
-	// the degenerate case of a header + row taller than a whole page).
+	// with fewer than keepHeaderRows body rows (default 1) beneath them. If the
+	// minimum fragment — all header rows + the first `keep` body rows + footer
+	// reserve — doesn't fit in the offered height, defer the whole table. The
+	// renderer moves it to a fresh page on LayoutNothing; at a fresh page top it
+	// offers full height so this can't loop (the page-top force-place path
+	// backstops the degenerate case of a header + rows taller than a whole page).
 	if headerRowCount > 0 && headerRowCount < bodyEnd {
-		minFragment := headerHeight + grid[headerRowCount].height +
-			float64(headerRowCount+1)*sv + footerHeight
+		bodyRows := bodyEnd - headerRowCount
+
+		keep := t.keepHeaderRows
+		if keep < 1 {
+			keep = 1
+		}
+		if keep > bodyRows {
+			keep = bodyRows // a short table keeps all its rows; never defers forever
+		}
+
+		minFragment := headerHeight + float64(headerRowCount+keep)*sv + footerHeight
+		for k := 0; k < keep; k++ {
+			minFragment += grid[headerRowCount+k].height
+		}
+
 		if minFragment > area.Height {
 			return LayoutPlan{Status: LayoutNothing}
 		}

@@ -43,6 +43,12 @@ type Options struct {
 	PageWidth float64
 	// PageHeight is the page height in points (default 792 = US Letter).
 	PageHeight float64
+	// KeepHeaderRows is the table orphan-control threshold applied to every
+	// table: the minimum number of body rows that must fit with the repeated
+	// <thead> rows on a page, else the whole table defers to the next page.
+	// 0 (the default) behaves as 1 — the header always keeps at least its first
+	// body row and never overflows the page box. See layout.Table.SetKeepHeaderRows.
+	KeepHeaderRows int
 	// FallbackFontPath is a Unicode-capable TTF/OTF font used when text
 	// contains characters outside WinAnsiEncoding (e.g. CJK, emoji). When
 	// BaseFS is set, the path is resolved through it first; otherwise the
